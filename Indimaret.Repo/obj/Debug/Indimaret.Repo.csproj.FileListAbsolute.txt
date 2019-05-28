@@ -1,0 +1,12 @@
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\Indimaret.Repo.dll.config
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\Indimaret.Repo.dll
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\Indimaret.Repo.pdb
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\EntityFramework.dll
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\EntityFramework.SqlServer.dll
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\Indimaret.Model.dll
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\Indimaret.Model.pdb
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\EntityFramework.xml
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\bin\Debug\EntityFramework.SqlServer.xml
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.csprojResolveAssemblyReference.cache
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.dll
+D:\Bootcamp 196 - Alvionia Hartono Putri\H-17\TRYGAIN\Indimaret\Indimaret.Repo\obj\Debug\Indimaret.Repo.pdb

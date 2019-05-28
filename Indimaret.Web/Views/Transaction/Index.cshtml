@@ -1,0 +1,162 @@
+﻿<head>
+
+</head>
+
+
+<h1><p class="text-center">TRANSACTION FORM</p></h1>
+<br /><br /><br />
+
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <td><label for="faktur">No. Faktur</label></td>
+                        <td>:</td>
+                        <td><input type="text" class="form-control" id="noFaktur"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dateSale">Date Sale</label></td>
+                        <td>:</td>
+                        <td><input type="date" class="form-control" id="saleDate"></td>
+                    </tr>
+                </table>
+            </div>
+      
+            <div class="form-group">
+                <input type="text" class="form-control" id="searchData" placeholder="Search">
+            </div>
+
+            <div class="table-responsive">
+                <table class="table" id="dataBarang">
+                    <thead>
+                    <td class="active">Name</td>
+                    <td class="success">Price</td>
+                    <td class="active">Action</td>
+                    </thead>
+                    <tbody id="idbdData"></tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <form>
+            <div class="table-responsive">
+                <table class="table" id="dtBarang">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>SubTotal</th>
+                        <th>Action</th>
+                    </tr>
+                    <tbody id="idbdDat"></tbody>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="Total" placeholder="Total Payment">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="pay" placeholder="Money Payment">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="moneyLeft" placeholder="Money Left">
+            </div>
+
+            <div class="form-group">
+                <button type="button" class="btn btn-success" id="clsSimpan">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+
+    //setting date di inbox menjadi date now
+
+    $("#saleDate").datepicker
+    ({
+        minDate:0
+    }).datepicker("setDate", new Date());
+    //setting date supaya tidak mundur dan tanggal terakhir adalah hari ini
+
+    var vDataBarang =
+    [
+        {'ID': 1, 'TokoID': 1, 'KodeBarang': "KB001", 'NamaBarang': "Panadol", 'AsalPabrik': "Bogor", 'harga': 3000, 'JmlBarang': 30, 'LamaKadaluarsa': 10 },
+        {'ID': 2, 'TokoID': 1, 'KodeBarang': "KB002", 'NamaBarang': "Dekolgen", 'AsalPabrik': "Bandung", 'harga': 2500, 'JmlBarang': 5, 'LamaKadaluarsa': 40 },
+        {'ID': 3, 'TokoID': 1, 'KodeBarang': "KB003", 'NamaBarang': "Promag", 'AsalPabrik': "Jakarta", 'harga': 2000, 'JmlBarang': 12, 'LamaKadaluarsa': 15 },
+        {'ID': 4, 'TokoID': 2, 'KodeBarang': "KB004", 'NamaBarang': "Vit C", 'AsalPabrik': "Yogya", 'harga': 500, 'JmlBarang': 23, 'LamaKadaluarsa': 20 }
+    ]
+
+
+    $(document).ready(function()
+    {
+        var data = " ";
+        var vInitial = 0;
+        $.each(vDataBarang, function(i,d)
+        {
+            data =  data +'<tr>' +
+                '<td>' + d.NamaBarang + '</td>'+
+                '<td>' + d.harga + '</td>'+
+                '<td>'+
+                '<button type="button" class="btn btn-primary clsAdd" dataTake=\'' + JSON.stringify(d) + '\'><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>'
+                '</td>'+
+                '</tr>';
+        });
+        $('#idbdData').append(data);
+
+        $('.clsAdd').click(function ()
+        {
+            debugger;
+            var vJmlBarang = 1;
+            var tkData = JSON.parse($(this).attr('dataTake'));
+            var vHargaBrg = tkData.harga;
+            var vdata = " ";
+            debugger;
+
+            $('.clNmBarang').each(function (i, d)
+            {
+                debugger;
+                if (tkData.ID === parseInt($(this).attr('dataID')))
+                {
+                    debugger;
+                    vJmlBarang++;
+                    $('.clJmlBarang').val(vJmlBarang);
+                    vHargaBrg = vJmlBarang * vHargaBrg;
+                    $('.clHargaBarang').val(vHargaBrg);
+                    $('#idbdDat').append(vdata);
+                }
+                else
+                {
+                    debugger;
+     
+                    vInitial = 0;
+                 
+                }
+               
+            });
+            if (vInitial == 0)
+            {
+                debugger;
+                vdata = vdata + '<tr>' +
+                    '<td><input type="text" class="clNmBarang" dataID="' + tkData.ID + '" value=" ' + tkData.NamaBarang + '" /></td>' +
+                    '<td><input type="text" class="clJmlBarang" value=" ' + vJmlBarang + '" /></td>' +
+                    '<td><input type="text" class="clHargaBarang" value=" ' + vHargaBrg + '" /></td>' +
+                    '<td><button type="button" class="btn btn-danger clsDlt"> x </button></td>' +
+                    '</tr>';
+                $('#idbdDat').append(vdata);
+                vInitial = 1;
+            }
+
+            $('.clsDlt').click(function ()
+            {
+                $(this).parent().parent().remove();
+            });
+        });
+    });
+</script>
